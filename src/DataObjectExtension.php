@@ -25,8 +25,6 @@ class DataObjectExtension extends DataExtension
     }
 
     public function updateCMSFields(FieldList $fields) {
-        var_dump($this->owner);
-
         $fields->push(
             HiddenField::create(
                 'SubsiteID',
@@ -34,6 +32,23 @@ class DataObjectExtension extends DataExtension
                 Subsite::currentSubsiteID()
             )
         );
+    }
+
+    /**
+     * Shamlessley taken from Subsites Module
+     * 
+     * @param null $action
+     * @return string
+     */
+    public function alternateAbsoluteLink($action = null)
+    {
+        // Generate the existing absolute URL and replace the domain with the subsite domain.
+        // This helps deal with Link() returning an absolute URL.
+        $url = Director::absoluteURL($this->owner->Link($action));
+        if ($this->owner->SubsiteID) {
+            $url = preg_replace('/\/\/[^\/]+\//', '//' . $this->owner->Subsite()->domain() . '/', $url);
+        }
+        return $url;
     }
 
     /**
