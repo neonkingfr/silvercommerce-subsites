@@ -1,6 +1,6 @@
 {
-  "name": "silvercommerce/subsites",
-  "description": "Module adding extra extensions to allow automatic integration of silverstripe/subsites with 
+    "name": "silvercommerce/subsites",
+    "description": "Module adding extra extensions to allow automatic integration of silverstripe/subsites with SilverCommerce Modules",
     "type": "silverstripe-vendormodule",
     "homepage": "https://github.com/silvercommerce/catalogue-admin",
     "keywords": [
