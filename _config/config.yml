@@ -1,0 +1,54 @@
+---
+Name: silvercommerce-subsites
+---
+
+---
+Only:
+  moduleexists: 'silvercommerce/catalogue-admin'
+---
+SilverCommerce\CatalogueAdmin\Admin\CatalogueAdmin:
+  extensions:
+    - SilverStripe\Subsites\Extensions\SubsiteMenuExtension
+SilverCommerce\CatalogueAdmin\Model\CatalogueProduct:
+  extensions:
+    - SilverCommerce\Subsites\DataObjectExtension
+SilverCommerce\CatalogueAdmin\Model\CatalogueCategory:
+  extensions:
+    - SilverCommerce\Subsites\DataObjectExtension
+SilverCommerce\CatalogueAdmin\Model\ProductTag:
+  extensions:
+    - SilverCommerce\Subsites\DataObjectExtension
+
+---
+Only:
+  moduleexists: 'silvercommerce/orders-admin'
+---
+SilverCommerce\OrdersAdmin\Admin\OrderAdmin:
+  extensions:
+    - SilverStripe\Subsites\Extensions\SubsiteMenuExtension
+SilverCommerce\OrdersAdmin\Model\Estimate:
+  extensions:
+    - SilverCommerce\Subsites\DataObjectExtension
+
+---
+Only:
+  moduleexists: 'silvercommerce/contact-admin'
+---
+SilverCommerce\ContactAdmin\Admin\ContactAdmin:
+  extensions:
+    - SilverStripe\Subsites\Extensions\SubsiteMenuExtension
+SilverCommerce\ContactAdmin\Model\Contact:
+  extensions:
+    - SilverCommerce\Subsites\DataObjectExtension
+SilverCommerce\ContactAdmin\Model\ContactList:
+  extensions:
+    - SilverCommerce\Subsites\DataObjectExtension
+SilverCommerce\ContactAdmin\Model\ContactLocation:
+  extensions:
+    - SilverCommerce\Subsites\DataObjectExtension
+SilverCommerce\ContactAdmin\Model\ContactNote:
+  extensions:
+    - SilverCommerce\Subsites\DataObjectExtension
+SilverCommerce\ContactAdmin\Model\ContactTag:
+  extensions:
+    - SilverCommerce\Subsites\DataObjectExtension
